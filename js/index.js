@@ -54,22 +54,24 @@ title.textContent = siteContent["cta"]["h1"];
 
 let button = document.querySelector(".cta-text button");
 button.textContent = siteContent["cta"]["button"];
-console.log(siteContent["cta"]["button"])
 
 let headings = document.querySelectorAll(".text-content h4");
 let headingContent = Object.keys(siteContent["main-content"]).filter(element => element.includes("h4"));
 for(i=0; i<headings.length; i++) {
   headings[i].textContent = siteContent["main-content"][`${headingContent[i]}`];
-}
+};
 
 let paragraphs = document.querySelectorAll(".text-content p");
 let paragraphsContent = Object.keys(siteContent["main-content"]).filter(element => element.includes("content"));
 for(i=0; i<paragraphs.length; i++) {
   paragraphs[i].textContent = siteContent["main-content"][`${paragraphsContent[i]}`];
-}
+};
 
 let middleImage = document.getElementById("middle-img");
 middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-let contactHeading = document.querySelector(".contact h4");
-contactHeading.textContent = siteContent["contact"]["contact-h4"];
+let contact = document.querySelectorAll(".contact h4, .contact p");
+let contactContent = Object.keys(siteContent["contact"]);
+for (i=0; i<contact.length; i++) {
+  contact[i].textContent = siteContent["contact"][`${contactContent[i]}`];
+};

@@ -47,7 +47,9 @@ headerImage.setAttribute('src', siteContent["cta"]["img-src"]);
 let navItems = document.querySelectorAll("nav a");
 for(i=0; i<navItems.length; i++) {
   navItems[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  navItems[i].setAttribute("style", "color: green");
 };
+
 
 let title = document.querySelector("h1");
 title.textContent = siteContent["cta"]["h1"];

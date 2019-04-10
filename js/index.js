@@ -55,3 +55,15 @@ title.textContent = siteContent["cta"]["h1"];
 let button = document.querySelector(".cta-text button");
 button.textContent = siteContent["cta"]["button"];
 console.log(siteContent["cta"]["button"])
+
+let headings = document.querySelectorAll(".text-content h4");
+let headingContent = Object.keys(siteContent["main-content"]).filter(element => element.includes("h4"));
+for(i=0; i<headings.length; i++) {
+  headings[i].textContent = siteContent["main-content"][`${headingContent[i]}`];
+}
+
+let paragraphs = document.querySelectorAll(".text-content p");
+let paragraphsContent = Object.keys(siteContent["main-content"]).filter(element => element.includes("content"));
+for(i=0; i<paragraphs.length; i++) {
+  paragraphs[i].textContent = siteContent["main-content"][`${paragraphsContent[i]}`];
+}

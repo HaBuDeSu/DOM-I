@@ -70,3 +70,6 @@ for(i=0; i<paragraphs.length; i++) {
 
 let middleImage = document.getElementById("middle-img");
 middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let contactHeading = document.querySelector(".contact h4");
+contactHeading.textContent = siteContent["contact"]["contact-h4"];

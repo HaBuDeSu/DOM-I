@@ -45,7 +45,13 @@ let headerImage = document.getElementById("cta-img");
 headerImage.setAttribute('src', siteContent["cta"]["img-src"]);
 
 let navItems = document.querySelectorAll("nav a");
-console.log(navItems);
 for(i=0; i<navItems.length; i++) {
   navItems[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
 };
+
+let title = document.querySelector("h1");
+title.textContent = siteContent["cta"]["h1"];
+
+let button = document.querySelector(".cta-text button");
+button.textContent = siteContent["cta"]["button"];
+console.log(siteContent["cta"]["button"])

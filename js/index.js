@@ -75,3 +75,6 @@ let contactContent = Object.keys(siteContent["contact"]);
 for (i=0; i<contact.length; i++) {
   contact[i].textContent = siteContent["contact"][`${contactContent[i]}`];
 };
+
+let footer = document.querySelector("footer p");
+footer.textContent = siteContent["footer"]["copyright"];

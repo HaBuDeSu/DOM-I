@@ -67,3 +67,6 @@ let paragraphsContent = Object.keys(siteContent["main-content"]).filter(element 
 for(i=0; i<paragraphs.length; i++) {
   paragraphs[i].textContent = siteContent["main-content"][`${paragraphsContent[i]}`];
 }
+
+let middleImage = document.getElementById("middle-img");
+middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);

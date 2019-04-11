@@ -14,6 +14,7 @@ let resetButton = document.querySelector("#reset");
 let timer;
 let start = function () {
   timer = setInterval(count, 10);
+  startButton.disabled = true;
 };
 
 resetButton.addEventListener('click', reset);
@@ -49,4 +50,5 @@ function reset() {
   msTens.innerHTML = 0;
   let digits = document.querySelectorAll(".digit");
   digits.forEach(digit => digit.classList.remove("redDigit"));
+  startButton.disabled = false;
 }

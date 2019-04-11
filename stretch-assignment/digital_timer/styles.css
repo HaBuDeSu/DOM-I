@@ -1,7 +1,12 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.digits {
+  display: block;
 }
 
 .digit {
@@ -11,4 +16,8 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.buttons {
+  display: block;
 }

@@ -50,6 +50,15 @@ for(i=0; i<navItems.length; i++) {
   navItems[i].setAttribute("style", "color: green");
 };
 
+let lastNavItem = document.createElement("a");
+lastNavItem.textContent = "Resources";
+let navBar = document.querySelector("nav");
+navBar.appendChild(lastNavItem);
+
+navItems = document.querySelectorAll("nav a");
+for(i=0; i<navItems.length; i++) {
+  navItems[i].setAttribute("style", "color: green");
+};
 
 let title = document.querySelector("h1");
 title.textContent = siteContent["cta"]["h1"];

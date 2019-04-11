@@ -8,6 +8,11 @@ secondTens.innerHTML = 0;
 secondOnes.innerHTML = 0;
 msTens.innerHTML = 0;
 
+let startButton = document.querySelector("#start");
+let resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener('click', reset);
+
 let timer = setInterval(count, 10);
 
 function count() {
@@ -31,3 +36,12 @@ function count() {
     msTens.innerHTML++;
   };
 };
+
+function reset() {
+  msHundreds.innerHTML = 0;
+  secondTens.innerHTML = 0;
+  secondOnes.innerHTML = 0;
+  msTens.innerHTML = 0;
+  let digits = document.querySelectorAll(".digit");
+  digits.forEach(digit => digit.classList.remove("redDigit"));
+}

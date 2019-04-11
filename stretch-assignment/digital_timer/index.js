@@ -16,7 +16,7 @@ function count() {
     if (msHundreds.innerHTML == 9) {
       msHundreds.innerHTML = 0;
       if (secondOnes.innerHTML == 9) {
-        secondTens.innerHTMl = 1;
+        secondTens.innerHTML = 1;
         secondOnes.innerHTML = 0;
         clearTimeout(timer);
       } else {
@@ -28,5 +28,4 @@ function count() {
   } else {
     msTens.innerHTML++;
   };
-  secondTens.innerHTMl = 1;
 };

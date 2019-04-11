@@ -18,6 +18,8 @@ function count() {
       if (secondOnes.innerHTML == 9) {
         secondTens.innerHTML = 1;
         secondOnes.innerHTML = 0;
+        let digits = document.querySelectorAll(".digit");
+        digits.forEach(digit => digit.classList.add("redDigit"));
         clearTimeout(timer);
       } else {
         secondOnes.innerHTML++;

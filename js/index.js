@@ -52,8 +52,15 @@ for(i=0; i<navItems.length; i++) {
 
 let lastNavItem = document.createElement("a");
 lastNavItem.textContent = "Resources";
+lastNavItem.setAttribute("href", "#");
+
+let firstNavItem = document.createElement("a");
+firstNavItem.textContent = "Home";
+firstNavItem.setAttribute("href", "#");
+
 let navBar = document.querySelector("nav");
 navBar.appendChild(lastNavItem);
+navBar.prepend(firstNavItem);
 
 navItems = document.querySelectorAll("nav a");
 for(i=0; i<navItems.length; i++) {

@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>IS<br>AWESOME",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -68,10 +68,11 @@ for(i=0; i<navItems.length; i++) {
 };
 
 let title = document.querySelector("h1");
-title.textContent = siteContent["cta"]["h1"];
+title.innerHTML = siteContent["cta"]["h1"];
 
 let button = document.querySelector(".cta-text button");
 button.textContent = siteContent["cta"]["button"];
+button.addEventListener('click', (event) => {event.target.style.backgroundColor = "blue"});
 
 let headings = document.querySelectorAll(".text-content h4");
 let headingContent = Object.keys(siteContent["main-content"]).filter(element => element.includes("h4"));

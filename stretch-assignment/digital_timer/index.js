@@ -11,9 +11,14 @@ msTens.innerHTML = 0;
 let startButton = document.querySelector("#start");
 let resetButton = document.querySelector("#reset");
 
+let timer;
+let start = function () {
+  timer = setInterval(count, 10);
+};
+
 resetButton.addEventListener('click', reset);
 
-let timer = setInterval(count, 10);
+startButton.addEventListener('click', start);
 
 function count() {
   if (msTens.innerHTML == 9) {

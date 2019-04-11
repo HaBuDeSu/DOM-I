@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>IS<br>AWESOME",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -39,4 +39,60 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let headerImage = document.getElementById("cta-img");
+headerImage.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let navItems = document.querySelectorAll("nav a");
+for(i=0; i<navItems.length; i++) {
+  navItems[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+};
+
+let lastNavItem = document.createElement("a");
+lastNavItem.textContent = "Resources";
+lastNavItem.setAttribute("href", "#");
+
+let firstNavItem = document.createElement("a");
+firstNavItem.textContent = "Home";
+firstNavItem.setAttribute("href", "#");
+
+let navBar = document.querySelector("nav");
+navBar.appendChild(lastNavItem);
+navBar.prepend(firstNavItem);
+
+navItems = document.querySelectorAll("nav a");
+for(i=0; i<navItems.length; i++) {
+  navItems[i].setAttribute("style", "color: green");
+};
+
+let title = document.querySelector("h1");
+title.innerHTML = siteContent["cta"]["h1"];
+
+let button = document.querySelector(".cta-text button");
+button.textContent = siteContent["cta"]["button"];
+button.addEventListener('click', (event) => {event.target.style.backgroundColor = "blue"});
+
+let headings = document.querySelectorAll(".text-content h4");
+let headingContent = Object.keys(siteContent["main-content"]).filter(element => element.includes("h4"));
+for(i=0; i<headings.length; i++) {
+  headings[i].textContent = siteContent["main-content"][`${headingContent[i]}`];
+};
+
+let paragraphs = document.querySelectorAll(".text-content p");
+let paragraphsContent = Object.keys(siteContent["main-content"]).filter(element => element.includes("content"));
+for(i=0; i<paragraphs.length; i++) {
+  paragraphs[i].textContent = siteContent["main-content"][`${paragraphsContent[i]}`];
+};
+
+let middleImage = document.getElementById("middle-img");
+middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let contact = document.querySelectorAll(".contact h4, .contact p");
+let contactContent = Object.keys(siteContent["contact"]);
+for (i=0; i<contact.length; i++) {
+  contact[i].textContent = siteContent["contact"][`${contactContent[i]}`];
+};
+
+let footer = document.querySelector("footer p");
+footer.textContent = siteContent["footer"]["copyright"];
